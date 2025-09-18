@@ -22,7 +22,7 @@ if currentSystem == "Darwin":  # macOS
     time.sleep(3)
 elif currentSystem == "Windows":  # Windows
     pyautogui.press("win")
-    pyautogui.write(browsers[0])  # Using Firefox as an example, but can be changed by just switching the index
+    pyautogui.write(browsers[2])  # Using Firefox as an example, but can be changed by just switching the index
     pyautogui.press("return")
     time.sleep(3)
 elif currentSystem == "Linux":  # Linux

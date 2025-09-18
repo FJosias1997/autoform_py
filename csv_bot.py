@@ -25,23 +25,38 @@ def csv_bot_filler():
     print(tabela)
     # Passo 4: Cadastrar um produto
     for linha in tabela.index:
-        pyautogui.click(x=536, y=312) # clicar no campo de código
+        # pyautogui.click(x=536, y=312) # click on Codigo field (if you're using MacOS )
+
+        pyautogui.click(x=802, y=321) # click on Codigo field (if you're using Windows )
+        
+        #depending on your screen resolution, you may need to adjust the x and y coordinates above
+        # you can use the click.py script to find the correct coordinates for your screen
+        # after running the click.py script, hover over the "codigo" field and wait for the coordinates to be printed in the console
+
         pyautogui.write(str(tabela.loc[linha, "codigo"]))
         pyautogui.press("tab") # marca
+
         pyautogui.write(str(tabela.loc[linha, "marca"]))
         pyautogui.press("tab") # tipo
+        
         pyautogui.write(str(tabela.loc[linha, "tipo"]))
         pyautogui.press("tab") # categoria
+        
         pyautogui.write(str(tabela.loc[linha, "categoria"]))
         pyautogui.press("tab") # preço unitário
+        
         pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
         pyautogui.press("tab") # custo
+        
         pyautogui.write(str(tabela.loc[linha, "custo"]))
         pyautogui.press("tab") # observações
+        
         obs = tabela.loc[linha, "obs"]
         if not pd.isna(obs):
             pyautogui.write(str(tabela.loc[linha, "obs"]))
         pyautogui.press("tab")
+        
         pyautogui.press("enter")
+        
         pyautogui.scroll(5000)
         
