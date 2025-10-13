@@ -10,34 +10,35 @@ def csv_bot_filler():
     pyautogui.press("return")
     time.sleep(3)
 
-    # Passo 2: Fazer login
-    # selecionar o campo de email
+    # Passo 2: login
+    # selecting email field
     pyautogui.press("tab")
     pyautogui.write("pythonimpressionador@gmail.com")
-    pyautogui.press("tab") # passando pro próximo campo
-    # selecionar o campo de senha
+    pyautogui.press("tab") # Going to next field
+    # Selecting password field
     pyautogui.write("123456")
     pyautogui.press("enter")
     time.sleep(3)
 
-    # Passo 3: Importar a base de produtos pra cadastrar
+    # Passo 3: Import database to register products
     tabela = pd.read_csv("tables/produtos.csv")
     print(tabela)
-    # Passo 4: Cadastrar um produto
+    # Passo 4: Register products
     for linha in tabela.index:
-        pyautogui.click(x=536, y=312) # clicar no campo de código
+        pyautogui.click(x=536, y=312) # Clicking in the register button 
+        # If needed, use get_cursor_position.py to get the coordinates of the button and plae on the above line
         pyautogui.write(str(tabela.loc[linha, "codigo"]))
-        pyautogui.press("tab") # marca
+        pyautogui.press("tab") # Label
         pyautogui.write(str(tabela.loc[linha, "marca"]))
-        pyautogui.press("tab") # tipo
+        pyautogui.press("tab") # type
         pyautogui.write(str(tabela.loc[linha, "tipo"]))
-        pyautogui.press("tab") # categoria
+        pyautogui.press("tab") # category
         pyautogui.write(str(tabela.loc[linha, "categoria"]))
-        pyautogui.press("tab") # preço unitário
+        pyautogui.press("tab") # price
         pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
-        pyautogui.press("tab") # custo
+        pyautogui.press("tab") # cost
         pyautogui.write(str(tabela.loc[linha, "custo"]))
-        pyautogui.press("tab") # observações
+        pyautogui.press("tab") # obs
         obs = tabela.loc[linha, "obs"]
         if not pd.isna(obs):
             pyautogui.write(str(tabela.loc[linha, "obs"]))

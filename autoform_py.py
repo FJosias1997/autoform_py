@@ -1,11 +1,12 @@
 import platform
 import pyautogui
 import time
-import pandas as pd
 import csv_bot
 
 pyautogui.PAUSE = 1.5
 browsers = ["firefox", "chrome", "edge", "safari", "opera"]
+
+selected_browser = browsers[0]  # You can change the index to select a different browser
 
 # Step 1: Identify the operating system
 currentSystem = platform.system()
@@ -17,17 +18,17 @@ if currentSystem == "Darwin":  # macOS
     pyautogui.keyUp("command")
 
     # search for the browser and open it
-    pyautogui.write(browsers[0])  # Using Firefox as an example, but can be changed by just switching the index
+    pyautogui.write(selected_browser)  # Using Firefox as an example, but can be changed by just switching the index
     pyautogui.press("return")
     time.sleep(3)
 elif currentSystem == "Windows":  # Windows
     pyautogui.press("win")
-    pyautogui.write(browsers[0])  # Using Firefox as an example, but can be changed by just switching the index
+    pyautogui.write(selected_browser)  # Using Firefox as an example, but can be changed by just switching the index
     pyautogui.press("return")
     time.sleep(3)
 elif currentSystem == "Linux":  # Linux
     pyautogui.press("super")
-    pyautogui.write(browsers[0])  # Using Firefox as an example, but can be changed by just switching the index
+    pyautogui.write(selected_browser)  # Using Firefox as an example, but can be changed by just switching the index
     pyautogui.press("return")
     time.sleep(3)
 else:
