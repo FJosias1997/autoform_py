@@ -23,7 +23,7 @@ A set of Python scripts to automatically insert records from a spreadsheet into 
 
 Live demonstration:
 
-![Adobe Express - 1760382190472512](https://github.com/user-attachments/assets/d3458afd-4c0e-4434-aed1-aa0b7d680a20)
+![Adobe Express - 1760382190472512(1)](https://github.com/user-attachments/assets/661afe57-d529-4ace-85a4-29fb770a0ec5)
 
 
 ## 1. Summary
