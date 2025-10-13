@@ -50,7 +50,7 @@ autoFormPy/
 │
 ├── tables/
 │   └── produtos.csv           # CSV data used for this project
-├── autoform_py.py             # Main automation script
+├── main.py                    # Main automation script
 ├── get_cursor_position.py     # Captures cursor coordinates for calibration
 └── README.md
 ```
@@ -72,7 +72,7 @@ git clone https://github.com/yourusername/autoFormPy.git
 cd autoFormPy
 ```
 
-### 3.3 Main Script: `autoform_py.py`
+### 3.3 Main Script: `main.py`
 
 1. **Select your browser** inside the script:
 
@@ -85,7 +85,7 @@ selected_browser = browsers[0]  # 0 = Firefox, 1 = Chrome, 2 = Edge...
 2. **Run the script**
 
 ```bash
-python autoform_py.py
+python main.py
 ```
 
 * On **Windows**, the script presses the Win key, types the browser name, and opens it.
@@ -110,7 +110,7 @@ python get_cursor_position.py
 ```
 
 * Open the test page, move the cursor to the input field, and wait ~5 seconds.
-* Copy the new coordinates to `autoform_py.py`, replacing lines like:
+* Copy the new coordinates to `main.py`, replacing lines like:
 
 ```python
 # Old
@@ -120,7 +120,7 @@ pyautogui.click(x=536, y=312)
 pyautogui.click(x=800, y=450)
 ```
 
-Rerun `autoform_py.py` to continue.
+Rerun `main.py` to continue.
 
 ---
 
