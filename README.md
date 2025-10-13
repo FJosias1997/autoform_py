@@ -2,9 +2,10 @@
 A couple of Python scripts which inserts automatically registers from a table to a HTML form
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Concluído-green)
-![Contribuições](https://img.shields.io/badge/Contribuições-Bem--vindas-brightgreen)
+![Python Libraries](https://img.shields.io/badge/Python%20Libraries-PyAutoGui%20%7C%20Pandas%20%7CTime-lightpurple)
+![License](https://img.shields.io/badge/Free-License-green)
+![Status](https://img.shields.io/badge/Status-Finished-green)
+![Contributions](https://img.shields.io/badge/Contributions-Welcome!-brightgreen)
 ![Platform](https://img.shields.io/badge/Platform-Mac%20%7C%20Windows%20%7C-lightgrey)
 
 ---
