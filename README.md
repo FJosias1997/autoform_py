@@ -1,67 +1,145 @@
 # autoFormPy
-A couple of Python scripts which inserts automatically registers from a table to a HTML form
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![Python Libraries](https://img.shields.io/badge/Python%20Libraries-PyAutoGui%20%7C%20Pandas%20%7CTime-lightpurple)
-![License](https://img.shields.io/badge/Free-License-green)
+A set of Python scripts to automatically insert records from a spreadsheet into an HTML form.
+
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python\&logoColor=white)
+![Python Libraries](https://img.shields.io/badge/Python%20Libraries-PyAutoGUI%20%7C%20Pandas%20%7C%20Time-lightpurple)
 ![Status](https://img.shields.io/badge/Status-Finished-green)
-![Contributions](https://img.shields.io/badge/Contributions-Welcome!-brightgreen)
-![Platform](https://img.shields.io/badge/Platform-Mac%20%7C%20Windows%20%7C-lightgrey)
+![Platform](https://img.shields.io/badge/Platform-Mac%20%7C%20Windows-lightgrey)
 
 ---
 
-## 📌 Sections
+## 📌 Table of Contents
 
-- [1. Summary](#1-summary)
-  - [1.1 What tools are used?](#11-what-tools-are-used-?)
-- [2. How it works?](#2-how-it-works-?)
-  - [2.1 Estrutura](#21-estrutura)
-- [3. Funcionalidades](#3-funcionalidades)
-- [4. Packages Utilizados](#4-packages-utilizados)
+* [1. Summary](#1-summary)
+
+  * [1.1 Tools Used](#11-tools-used)
+* [2. Project Structure](#2-project-structure)
+* [3. Usage](#3-usage)
+* [4. Features](#4-features)
+* [5. Why This Project Matters](#5-why-this-project-matters)
 
 ---
 
 ## 1. Summary
 
-This is a couple of scripts made to automate the process of inserting records from a spreadsheet (CSV file) to a database, via HTML form and display them at the same page. 
-And also, we have a simple script to capture the position of the cursor from screen to calibrate and adjust the autoFormPy, once we may face some issues or flaws
-for the variety of screen resolutions of the devices. 
+This project consists of Python scripts designed to automate the process of inserting records from a spreadsheet (CSV file) into an HTML form and displaying them on the same page.
 
-### 1.1 What tools are used?
+Additionally, there is a script to capture the cursor position on the screen, which helps calibrate the automation for different screen resolutions.
 
-All scripts were written in Python, in due to its simplicity and the libraries focused on automation and complexive process manipulating large of data and databases.
-In adittion, we'll use the libraries: 
-    - ✅ PyAutoGui - It creates dynamic automations with no efforts. With a single line, we can allow the script to press the Win button from the PC, for example. 
-    - ✅ Time - Native library from Python. We'll use to create some "delays" in the processing, in order to maintain the usability of the code
-    - ✅ Pandas - It is responsible for read and manipulate data from spreadsheets, databases. In this case, We'll read a CSV file.
+> Note: The CSV file and HTML form used in this project are in Portuguese, but the concepts are applicable to any language.
+
+### 1.1 Tools Used
+
+* **Python** – Chosen for its simplicity and extensive libraries for automation and data manipulation.
+* **PyAutoGUI** – Automates mouse clicks, keyboard typing, and other UI interactions.
+* **Time** – Native Python library for adding delays, ensuring the automation works smoothly.
+* **Pandas** – Handles CSV parsing and data manipulation for the automation process.
 
 ---
 
-## 2. How it works?
+## 2. Project Structure
 
+```plaintext
+autoFormPy/
+│
+├── tables/
+│   └── produtos.csv           # CSV data used for this project
+├── autoform_py.py             # Main automation script
+├── get_cursor_position.py     # Captures cursor coordinates for calibration
+└── README.md
+```
 
-<img width="659" height="98" alt="Captura de Tela 2025-10-13 às 13 32 53" src="https://github.com/user-attachments/assets/1781f699-4e13-405e-ac39-195718abf131" />
+---
 
-Let's take a look in autoform_py.py. It's the file we'll run.
+## 3. Usage
 
-First, make sure to select the correct browser to to the process in the script.
-By default, it's selected to the first browser on the list - Firefox. But, if you have another one of the browsers listed, you can change the 0 to 1...2..3, according to the position on the list. Ex: If you have Edge, then change: selected_browser = browsers[0] to selected_browser = browsers[2].
+### 3.1 Install Dependencies
 
-After running him, He will act according to the operating system of your machine. If Windows, he will use PyAutoGui to press Win and type the browser on the search to open it.
-If MacOS, He will press cmd + space and type the browser and open.
+```bash
+pip install pyautogui pandas
+```
 
-If after some time you note something glitchy or the script did not select correctly the fields and fill them, probably it's in due to the cursor of the machine did not select correctly some fields. So, we may need to adjust him on the PyAutoGui. PyAutoGui clicks with cursor according to the coordinates we pass to it. Not all the screens will have the same resolutions, so we need to fix it.
-If the script is currently running, we can stop the process by positioning the cursor to the left top of the screen. It it doesn't work, you can stop the process into the VS Code directly.
+### 3.2 Clone Repository
 
-For this, we'll open get_cursor_position.py and run it. After running, open the login page provided on the code, use any email or password to enter (once it's for tests purposes). Put the cursor above the first field to be filled and wait 5 seconds until terminal gives the coordinates.
+```bash
+git clone https://github.com/yourusername/autoFormPy.git
+cd autoFormPy
+```
 
-An then:
+### 3.3 Main Script: `autoform_py.py`
 
-<img width="941" height="65" alt="Captura de Tela 2025-10-13 às 13 40 09" src="https://github.com/user-attachments/assets/2a96c3c1-c8a6-46b0-84a2-755e3d258db6" />
+1. **Select your browser** inside the script:
 
-Change the pyautogui.click(x=536, y=312) to the coordinates you got from the get_cursor_position.py.
+```python
+selected_browser = browsers[0]  # 0 = Firefox, 1 = Chrome, 2 = Edge...
+```
 
-After this, run again the autoform_py.py and try again and see if it's all working.
+> Make sure to select the correct browser. By default, Firefox (0) is selected. Adjust the index if using another browser.
 
-> Happy coding!
+2. **Run the script**
 
+```bash
+python autoform_py.py
+```
+
+* On **Windows**, the script presses the Win key, types the browser name, and opens it.
+* On **macOS**, it uses Cmd + Space (Spotlight) to open the selected browser.
+
+3. **Automation Process**
+   Once the form is open, PyAutoGUI will:
+
+* Click each field based on coordinates
+* Type data from the CSV file
+* Submit the form
+* Repeat for all rows
+
+4. **Fails or Glitches**
+
+* If the script fails to select the right fields, recalibrate cursor coordinates.
+* Move the cursor to the top-left corner to stop the automation, or stop the process in your editor.
+* Run:
+
+```bash
+python get_cursor_position.py
+```
+
+* Open the test page, move the cursor to the input field, and wait ~5 seconds.
+* Copy the new coordinates to `autoform_py.py`, replacing lines like:
+
+```python
+# Old
+pyautogui.click(x=536, y=312)
+
+# New example
+pyautogui.click(x=800, y=450)
+```
+
+Rerun `autoform_py.py` to continue.
+
+---
+
+## 4. Features
+
+* ⚙️ Automatic HTML form filling from spreadsheet data
+* 📄 CSV parsing with Pandas
+* 🖱️ Cross-platform automation (Windows & macOS)
+* 🎯 Customizable cursor calibration
+* 🛑 Failsafe mechanism (move mouse to top-left corner to stop)
+
+---
+
+## 5. Why This Project Matters
+
+This project demonstrates:
+
+* **Practical Python skills** in automation and data manipulation
+* **Problem-solving mindset**: handling screen resolution differences and failsafe mechanisms
+* **Cross-platform development**
+* Ability to streamline repetitive tasks and save significant time in data entry processes
+
+> In short, it’s a concrete example of applying Python to solve real-world productivity challenges.
+
+---
+
+> Happy coding! 🚀
