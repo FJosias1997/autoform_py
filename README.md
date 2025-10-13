@@ -21,6 +21,11 @@ A set of Python scripts to automatically insert records from a spreadsheet into 
 
 ---
 
+Live demonstration:
+
+![Adobe Express - 1760382190472512](https://github.com/user-attachments/assets/d3458afd-4c0e-4434-aed1-aa0b7d680a20)
+
+
 ## 1. Summary
 
 This project consists of Python scripts designed to automate the process of inserting records from a spreadsheet (CSV file) into an HTML form and displaying them on the same page.
