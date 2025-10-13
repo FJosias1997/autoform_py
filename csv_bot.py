@@ -43,6 +43,8 @@ def csv_bot_filler():
         if not pd.isna(obs):
             pyautogui.write(str(tabela.loc[linha, "obs"]))
         pyautogui.press("tab")
+        
         pyautogui.press("enter")
+        
         pyautogui.scroll(5000)
         
