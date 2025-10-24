@@ -123,23 +123,26 @@ pyautogui.click(x=800, y=450)
 
 Rerun `main.py` to continue.
 
-⚠️ Note:
-Depending on your machine’s performance, waiting 5 seconds after login page might be too long or too short.
-On the csv_bot.py:
+⚠️ Note: Depending on your machine’s performance, waiting 5 seconds after login page might be too long or too short.
+
+If this happens, open the csv_bot.py file and adjust the time.sleep value:
+
 ```
+ # Inside csv_bot.py
  pyautogui.press("enter")
- time.sleep(5)
+ time.sleep(5) # <-- Change this value
 ```
 Change the time.sleep to 4 or less, depending on the performance.
 
 This makes the process faster on high-performance systems or slower on older ones.
 
-You may encounter the same issue while searching for the browser on your machine.
+You may encounter the same issue while searching for the browser...
 
 In the line:
 ```
+# Inside [main.py or csv_bot.py, whichever file has this code]
 pyautogui.press("return")
-time.sleep(3)
+time.sleep(3) # <-- Adjust this value
 ```
 
 Adjust the time.sleep to >3 secs or <3 secs, depending of the performance of the machine.
