@@ -3,7 +3,7 @@
 A set of Python scripts to automatically insert records from a spreadsheet into an HTML form.
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python\&logoColor=white)
-![Python Libraries](https://img.shields.io/badge/Python%20Libraries-PyAutoGUI%20%7C%20Pandas%20%7C%20Time-lightpurple)
+![Python Libraries](https://img.shields.io/badge/Python%20Libraries-PyAutoGUI%20%7C%20Pandas-lightpurple)
 ![Status](https://img.shields.io/badge/Status-Finished-green)
 ![Platform](https://img.shields.io/badge/Platform-Mac%20%7C%20Windows-lightgrey)
 
@@ -28,9 +28,9 @@ Live demonstration:
 
 ## 1. Summary
 
-This project consists of Python scripts designed to automate the process of inserting records from a spreadsheet (CSV file) into an HTML form and displaying them on the same page.
-
+This project consists of Python scripts designed to automate the process of logging into a system, inserting records from a spreadsheet (CSV file) into an HTML form, and displaying them on the same page.
 Additionally, there is a script to capture the cursor position on the screen, which helps calibrate the automation for different screen resolutions.
+
 
 > Note: The CSV file and HTML form used in this project are in Portuguese, but the concepts are applicable to any language.
 
@@ -123,7 +123,7 @@ pyautogui.click(x=800, y=450)
 
 Rerun `main.py` to continue.
 
-⚠️ Note: Depending on your machine’s performance, waiting 5 seconds after login page might be too long or too short.
+Depending on your machine’s performance, waiting 5 seconds for the browser to open might be too long or too short.
 
 If this happens, open the csv_bot.py file and adjust the time.sleep value:
 
@@ -173,5 +173,15 @@ This project demonstrates:
 > In short, it’s a concrete example of applying Python to solve real-world productivity challenges.
 
 ---
+
+## 6. Limitations and Next Steps
+
+This project uses PyAutoGUI, an approach based on screen coordinates. While effective for quick automation, it is sensitive to variations in screen resolution, window sizing, and other applications.
+
+Possible improvements for a future version (v2.0):
+
+    DOM-Based Automation: Replace PyAutoGUI with tools like Selenium or Playwright. They interact directly with HTML elements (by ID, class, or XPath), making the automation 100% independent of screen resolution and much more robust.
+
+    Image Recognition: Instead of fixed coordinates, use the pyautogui.locateOnScreen() function to find the form fields visually, which would make the script more adaptable to minor interface changes.
 
 > Happy coding! 🚀
