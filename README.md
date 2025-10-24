@@ -50,7 +50,8 @@ autoFormPy/
 │
 ├── tables/
 │   └── produtos.csv           # CSV data used for this project
-├── main.py                    # Main automation script
+├── main.py                    # Script principal (inicia a automação)
+├── csv_bot.py                 # Módulo que executa a automação (chamado pelo main.py)
 ├── get_cursor_position.py     # Captures cursor coordinates for calibration
 └── README.md
 ```
